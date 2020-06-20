@@ -1,3 +1,69 @@
+# Forms
+
+HTML form elements work a little bit differently from other DOM elements in React, because form elements naturally keep some internal state.  
+or example, this form in plain HTML accepts a single name:
+
+```html
+<form>
+  <label> Name: <input type="text" name="name" /> </label>
+  <input type="submit" value="Submit" />
+</form>
+```
+
+Forms can have `Uncontrolled components` as well as `Controlled components`.  
+[Explaination](https://goshakkk.name/controlled-vs-uncontrolled-inputs-react/#conclusion)
+
+## Uncontrolled Component
+
+There is no attempt to directly control the state of this component or what the user can type into the input. Since the component is uncontrolled, we don’t really have a way of interacting with state as well.
+
+```html
+<input type="text" defaultValue="foo" ref="{inputRef}" />
+
+OR
+
+<input type="text" />
+```
+
+## Controlled Component
+
+The value of the input is explicitly defined by state.
+
+```html
+<input type="text" value="{value}" onChange="{handleChange}" />
+```
+
+| Element                     | Value property         | Change callback | New value in the callback |
+| --------------------------- | ---------------------- | --------------- | ------------------------- |
+| `<input type="text" />`     | `value="string"`       | `onChange`      | `event.target.value`      |
+| `<input type="checkbox" />` | `checked={boolean}`    | `onChange`      | `event.target.checked`    |
+| `<input type="radio" />`    | `checked={boolean}`    | `onChange`      | `event.target.checked`    |
+| `<textarea />`              | `value="string"`       | `onChange`      | `event.target.value`      |
+| `<select />`                | `value="option value"` | `onChange`      | `event.target.value`      |
+
+## useRef Hook
+
+`Refs` provide a way to access DOM nodes or React elements created in the render method.
+
+### When to Use Refs
+
+There are a few good use cases for refs:
+
+- Managing focus, text selection, or media playback.
+- Triggering imperative animations.
+- Integrating with third-party DOM libraries.
+
+## Implement below template
+
+- ### add validations
+
+- ### perform calculation and show the total at the end
+
+- ### On submitting the form show the entered data in a confirmation popup
+
+[Template](https://www.jotform.com/form-templates/conference-online-registration-form)  
+![template](template.png)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
